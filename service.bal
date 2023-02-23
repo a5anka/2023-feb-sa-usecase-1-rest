@@ -38,11 +38,11 @@ final mysql:Client dbClient = check new(
 
 # A service representing a network-accessible API
 # bound to port `9090`.
-service /items on new http:Listener(9090) {
+service / on new http:Listener(9090) {
 
     # A resource for generating greetings
     # + return - string name with hello message or error
-    resource function get .() returns Item[]|error {
+    resource function get items() returns Item[]|error {
         return getAllItems();
     }
 }
