@@ -13,7 +13,8 @@ type Item record {|
     string title;
     string description?;
     string includes?;
-    string intended_for?;
+    @sql:Column {name: "intended_for"}
+    string intendedFor?;
     string color?;
     string material?;
     decimal price;
