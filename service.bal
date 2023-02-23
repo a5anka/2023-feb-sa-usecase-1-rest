@@ -41,9 +41,8 @@ final mysql:Client dbClient = check new(
 service / on new http:Listener(9090) {
 
     # A resource for generating greetings
-    # + name - the input string name
     # + return - string name with hello message or error
-    resource function get .(string name) returns Item[]|error {
+    resource function get .() returns Item[]|error {
         return getAllItems();
     }
 }
